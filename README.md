@@ -1,4 +1,3 @@
-```markdown
 # 📄 Reporte Técnico de Arquitectura: ASL Real-Time Backend
 
 > 🚧 **ESTADO DEL PROYECTO: Fase 1 (Fundamentos y Arquitectura)**

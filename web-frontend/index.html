@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web-frontend</title>
+    <title>DualSign</title>
+
+    <!-- MediaPipe Holistic + Drawing Utils loaded as globals (CDN).
+         These packages use Closure Compiler IIFE and are not compatible
+         with Vite's ESM bundling — loading them as classic scripts is the
+         approach recommended by Google for @mediapipe/* packages. -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic@0.5.1675471629/holistic.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.3.1675466124/drawing_utils.js" crossorigin="anonymous"></script>
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: 0.4; }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

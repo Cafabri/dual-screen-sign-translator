@@ -14,7 +14,7 @@ Este es un sistema híbrido Edge + Cloud (Borde y Nube).
 3. **El Puente Cloud:** Un servidor ligero en Node.js + Socket.io enruta mensajes de texto de baja latencia entre los dos navegadores.
 
 **Requisitos Críticos de IA y UX (Fases Futuras):**
-- **Ecosistema 100% en Inglés:** Las glosas de ASL, el enriquecimiento de NLP y las respuestas habladas operarán estrictamente en inglés para minimizar la latencia. No hay traducción al español.
+- **Ecosistema 100% en Inglés:** Las glosas de ASL, el enriquecimiento de NLP y las respuestas habladas operarán estrictamente en inglés para minimizar la latencia. Las glosas crudas (ej. `["I", "WANT", "WATER"]`) se reescriben en inglés conversacional natural (ej. `"I'd like some water, please"`), no se traducen al español.
 - **El Gatillo de "Fin de Frase":** La IA local dependerá de un gesto físico específico (ej. bajar las manos) para saber cuándo el usuario ha terminado de signar antes de enviar el paquete de datos.
 - **Enriquecimiento con NLP:** Las glosas crudas de ASL (ej. "I WANT APPLE") se enviarán a una API de NLP (como OpenAI) para reescribirse en inglés conversacional natural antes de mostrarse al Guest.
 - **TTS Emocional:** El texto enriquecido se leerá en voz alta para el Guest usando una API avanzada de Texto-a-Voz (como ElevenLabs) que refleje la emoción humana de los signos originales.
@@ -23,7 +23,25 @@ Este es un sistema híbrido Edge + Cloud (Borde y Nube).
 
 ## 📁 Estructura del Monorepo
 
-Existen tres paquetes; actualmente, solo `backend-sockets` está completamente activo. `web-frontend` (React/Vite) se está inicializando, e `ia-entrenamiento` es un espacio reservado (placeholder) para futuros scripts locales de Machine Learning en Python.
+```
+asl-translator-monorepo/
+├── docs/                  # Todos los reportes del proyecto (prefijo ml_ o backend_)
+│   └── training_logs/     # Logs de ejecución auto-generados por ml/reporter/generator.py
+├── backend-sockets/       # Servidor Node.js + Socket.io (Clean Architecture)
+├── ml/                    # Pipeline de entrenamiento Python
+│   ├── data/              # Datos reales: source/ (WLASL raw), filtered/ (videos por clase), features/ (.npy)
+│   ├── pipeline/          # Módulos Python: carga y preprocesado de datos
+│   ├── augmentation/      # Lógica de data augmentation
+│   ├── model/             # Arquitectura, entrenamiento y evaluación del modelo
+│   ├── reporter/          # Generación de logs de entrenamiento
+│   ├── dashboard/         # Visualización Streamlit
+│   ├── scripts/           # Scripts ejecutables (train_model.py, export_tfjs.py, etc.)
+│   └── artifacts/         # Outputs generados: modelo_dualsign.keras, tfjs_export/, dashboard_data/
+└── web-frontend/          # App React/Vite
+    └── public/models/     # Modelo TF.js que consume el navegador (model.json + *.bin)
+```
+
+`backend-sockets` está completamente activo. `web-frontend` (React/Vite) en Fase 5. `ml/` contiene el pipeline completo de entrenamiento ASL con LSTM (82.32% accuracy sobre 10 clases).
 
 ## 💻 Comandos
 
@@ -63,12 +81,12 @@ asl-core/
 ### Flujo de Eventos en Tiempo Real
 
 ```text
-El Cliente emite 'sign-data' { hand, coordinates }
+El Cliente emite 'sign-data' { phrase: ["APPLE", "PLEASE"] }
   → SignController.handleSignData(socket)
     → TranslateSign (añade timestamp)
       → translator.processSignData() (valida + traduce)
     → en error:   socket.emit('translation-error')             [solo al emisor]
-    → en éxito: socket.broadcast.emit('translation-update')  [a todos los demás]
+    → en éxito: socket.to(roomId).emit('translation-update')  [solo a la sala]
 ```
 
 ### Patrones Clave y Reglas de Clean Code
@@ -78,7 +96,8 @@ El Cliente emite 'sign-data' { hand, coordinates }
 - **Respuesta Estandarizada del Core:** `{ status: "success"|"error", text?, message? }` — las capas superiores dependen de esta estructura exacta.
 - **Logs por Capas:** Prefijos coloreados con `chalk` por capa (`[Core]` verde, `[UseCase]` magenta, `[Controller]` cian) — sigue estas convenciones al añadir logs.
 
-### Estado Actual (Fase 1)
+### Estado Actual (Fase 5 — en progreso)
 
-La lógica de traducción en `asl-core/translator.js` es actualmente una **simulación (placeholder)**. La arquitectura está diseñada específicamente para que reemplazar esta lógica central (cuando comience la integración de IA en el frontend en la Fase 2/3) requiera cero cambios en las capas de aplicación o infraestructura.
-```
+Hitos 1–6 del frontend completos. El flujo de signing → chips → envío funciona end-to-end.
+GuestPage es un esqueleto que solo hace `join-room`. Pendiente: subtítulos, NLP (OpenAI), TTS, sentiment analysis.
+`asl-core/translator.js` sigue siendo placeholder — la integración real de OpenAI va en un nuevo use-case.

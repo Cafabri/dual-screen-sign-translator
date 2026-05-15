@@ -1,3 +1,4 @@
+require('dotenv').config();
 const chalk = require('chalk');
 
 // Importamos las librerías necesarias de infraestructura (el mundo exterior)
@@ -18,11 +19,15 @@ const server = http.createServer(app);
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 const PORT = process.env.PORT || 3000;
 
-// 👉 3. Inicializamos Socket.io aplicando reglas de CORS 
+const corsOrigin = process.env.NODE_ENV === 'production'
+  ? CLIENT_URL
+  : (origin, callback) => callback(null, true); // allow all origins in dev (LAN mobile access)
+
+// 👉 3. Inicializamos Socket.io aplicando reglas de CORS
 // (Seguridad: solo dejamos que nuestra app de React/Vue se conecte)
 const io = new Server(server, {
   cors: {
-    origin: CLIENT_URL,
+    origin: corsOrigin,
     methods: ["GET", "POST"]
   }
 });

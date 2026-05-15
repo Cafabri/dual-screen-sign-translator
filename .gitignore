@@ -2,3 +2,15 @@ node_modules/
 .env
 .DS_Store
 dist/
+venv/
+__pycache__/
+*.pyc
+
+# Training data — download from Kaggle (see docs/ml__dataset_wlasl_filtering_mapping.md)
+ml/data/source/videos/
+ml/data/filtered/
+ml/data/features/
+
+# Trained Keras model — regenerate by running scripts/train_model.py
+ml/artifacts/modelo_dualsign.keras
+

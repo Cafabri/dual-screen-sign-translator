@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DualSign — TF.js Load Test</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <style>
+    body { font-family: monospace; padding: 2rem; background: #0d1117; color: #c9d1d9; }
+    h2   { color: #58a6ff; }
+    pre  { background: #161b22; padding: 1rem; border-radius: 6px; }
+    .ok  { color: #3fb950; }
+    .err { color: #f85149; }
+  </style>
+</head>
+<body>
+  <h2>DualSign — TF.js Model Load Test</h2>
+  <pre id="log">Loading...</pre>
+
+  <script>
+    const log = document.getElementById('log');
+    const write = (msg, cls) => {
+      const span = document.createElement('span');
+      span.className = cls || '';
+      span.textContent = msg + '\n';
+      log.appendChild(span);
+    };
+
+    log.textContent = '';
+
+    (async () => {
+      try {
+        write('Loading model from model.json...');
+        const model = await tf.loadLayersModel('model.json');
+
+        write(`✓ Model loaded`, 'ok');
+        write(`  Input  shape : [${model.inputs[0].shape}]`);
+        write(`  Output shape : [${model.outputs[0].shape}]`);
+        write(`  Total params : ${model.countParams().toLocaleString()}`);
+
+        write('\nRunning dummy inference (30 frames × 1629 features)...');
+        const dummy = tf.zeros([1, 30, 1629]);
+        const pred  = model.predict(dummy);
+        const probs = await pred.data();
+        const classes = ['apple','bye','hello','help','more','no','please','thank_you','water','yes'];
+        const top = Array.from(probs)
+          .map((p, i) => ({ label: classes[i], prob: p }))
+          .sort((a, b) => b.prob - a.prob)[0];
+
+        write(`✓ Inference OK — top prediction: "${top.label}" (${(top.prob * 100).toFixed(1)}%)`, 'ok');
+        write('\n✓ All checks passed. Model is ready for integration.', 'ok');
+
+        dummy.dispose();
+        pred.dispose();
+      } catch (e) {
+        write('✗ ERROR: ' + e.message, 'err');
+        console.error(e);
+      }
+    })();
+  </script>
+</body>
+</html>

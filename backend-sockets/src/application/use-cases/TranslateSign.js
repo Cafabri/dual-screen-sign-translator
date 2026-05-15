@@ -1,27 +1,24 @@
 const chalk = require('chalk');
-// 👉 Importamos la lógica pura (El Cerebro)
 const { processSignData } = require('../../asl-core/translator');
+const { enrichGlossToNaturalEnglish } = require('../../infrastructure/nlp/GroqNlpService');
+// ElevenLabsTtsService kept for future paid-tier integration
+// const { synthesizeSpeech } = require('../../infrastructure/tts/ElevenLabsTtsService');
 
-const executeTranslateSign = (rawData) => {
-  console.log(chalk.magenta(`[UseCase] ⚙️ Orquestando traducción...`));
-  
-  // 👉 1. Le pedimos al Core que haga el cálculo matemático/IA pesado
-  const translationResult = processSignData(rawData);
+const executeTranslateSign = async (rawData) => {
+  console.log(chalk.magenta(`[UseCase] ⚙️ Orchestrating translation...`));
 
-  // 👉 2. Si el Core detecta que los datos son basura, abortamos
-  if (translationResult.status === "error") {
-    console.log(chalk.magenta.dim(`[UseCase] ⚠️ Proceso abortado por error en el Core.`));
-    return translationResult;
+  const coreResult = processSignData(rawData);
+  if (coreResult.status === 'error') {
+    console.log(chalk.magenta.dim(`[UseCase] ⚠️ Aborted due to core validation error.`));
+    return coreResult;
   }
 
-  // 👉 3. Responsabilidad de Aplicación: Generamos la hora exacta del servidor
-  const generatedTimestamp = new Date().toISOString();
-  console.log(chalk.magenta(`[UseCase] ✅ Añadiendo timestamp: `) + chalk.white(generatedTimestamp));
-  
-  // 👉 4. Empaquetamos la respuesta del Core JUNTO con nuestro nuevo timestamp
+  const enrichedText = await enrichGlossToNaturalEnglish(coreResult.rawGloss);
+
   return {
-    ...translationResult, // Esparce los datos que devolvió el Core (status y text)
-    timestamp: generatedTimestamp // Añade nuestra variable de tiempo
+    status: 'success',
+    text: enrichedText,
+    timestamp: new Date().toISOString(),
   };
 };
 

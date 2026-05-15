@@ -4,13 +4,17 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon src/entry-points/main.js",
+    "dev:lan": "node scripts/dev-lan.js",
     "start": "node server.js",
     "test": "node test/test-connection.js"
   },
   "dependencies": {
+    "@elevenlabs/elevenlabs-js": "^2.46.0",
     "chalk": "^4.1.2",
     "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
     "express": "^4.18.2",
+    "groq-sdk": "^1.2.0",
     "socket.io": "^4.7.2",
     "socket.io-client": "^4.8.3"
   },

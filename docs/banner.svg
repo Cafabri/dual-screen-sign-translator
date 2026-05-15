@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="220" fill="url(#bg)" rx="14"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="0" y1="73" x2="900" y2="73" stroke="#1e293b" stroke-width="1" opacity="0.6"/>
+  <line x1="0" y1="147" x2="900" y2="147" stroke="#1e293b" stroke-width="1" opacity="0.6"/>
+  <line x1="225" y1="0" x2="225" y2="220" stroke="#1e293b" stroke-width="1" opacity="0.6"/>
+  <line x1="450" y1="0" x2="450" y2="220" stroke="#1e293b" stroke-width="1" opacity="0.6"/>
+  <line x1="675" y1="0" x2="675" y2="220" stroke="#1e293b" stroke-width="1" opacity="0.6"/>
+
+  <!-- Left glow blob -->
+  <circle cx="120" cy="110" r="80" fill="#3b82f6" opacity="0.07"/>
+  <!-- Right glow blob -->
+  <circle cx="780" cy="110" r="80" fill="#8b5cf6" opacity="0.07"/>
+
+  <!-- Accent bar top -->
+  <rect x="0" y="0" width="900" height="4" fill="url(#accent)" rx="2"/>
+
+  <!-- Hand icons (left) -->
+  <text x="68" y="125" font-family="serif" font-size="52" text-anchor="middle" opacity="0.18" fill="white">🤟</text>
+
+  <!-- Hand icons (right) -->
+  <text x="832" y="125" font-family="serif" font-size="52" text-anchor="middle" opacity="0.18" fill="white">🤙</text>
+
+  <!-- Title -->
+  <text x="450" y="105" font-family="system-ui, -apple-system, Arial, sans-serif"
+        font-size="62" font-weight="800" fill="white" text-anchor="middle"
+        letter-spacing="-1" filter="url(#glow)">DualSign</text>
+
+  <!-- Accent underline -->
+  <rect x="330" y="116" width="240" height="3" fill="url(#accent)" rx="2"/>
+
+  <!-- Subtitle -->
+  <text x="450" y="152" font-family="system-ui, -apple-system, Arial, sans-serif"
+        font-size="17" fill="#94a3b8" text-anchor="middle" letter-spacing="0.5">
+    Real-time · Zero-touch · Bidirectional  ASL ↔ English
+  </text>
+
+  <!-- Tag line -->
+  <text x="450" y="184" font-family="system-ui, -apple-system, Arial, sans-serif"
+        font-size="13" fill="#475569" text-anchor="middle" letter-spacing="1">
+    BROWSER-NATIVE · NO APP REQUIRED · ON-DEVICE AI
+  </text>
+
+  <!-- Accent bar bottom -->
+  <rect x="0" y="216" width="900" height="4" fill="url(#accent)" rx="2"/>
+</svg>

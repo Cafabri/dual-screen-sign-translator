@@ -1,6 +1,6 @@
-# DualSign
-
-**Real-time, zero-touch, bidirectional ASL ↔ English translation — entirely in the browser.**
+<p align="center">
+  <img src="docs/banner.svg" alt="DualSign" width="100%"/>
+</p>
 
 ---
 
@@ -111,6 +111,18 @@ python scripts/export_tfjs.py         # convert and copy to web-frontend/public/
 ```
 
 The raw video dataset (WLASL) is not included in the repository. Download it separately and place it under `ml/data/source/` before running the first script.
+
+### Training Dashboard
+
+All training results — accuracy curves, loss evolution, confusion matrix, and per-class confidence distribution — are available as an interactive Streamlit dashboard.
+
+```bash
+cd ml
+source venv/bin/activate
+streamlit run scripts/dashboard.py    # opens http://localhost:8501
+```
+
+The dashboard reads pre-computed JSON files from `ml/artifacts/dashboard_data/`, so no model or GPU is needed to view it. The data from the last training run is already included in the repository.
 
 ---
 

@@ -1,0 +1,195 @@
+INFO | ── DualSign · Filtrado WLASL MVP ──────────────────────────
+INFO | JSON fuente : /Users/carlosfalcon/Desktop/asl-translator-monorepo/ia-entrenamiento/raw_data/WLASL_v0.3.json
+INFO | Videos src  : /Users/carlosfalcon/Desktop/asl-translator-monorepo/ia-entrenamiento/raw_data/videos
+INFO | Dataset dest: /Users/carlosfalcon/Desktop/asl-translator-monorepo/ia-entrenamiento/dataset
+INFO | Palabras MVP: ['hello', 'bye', 'yes', 'no', 'please', 'thank you', 'help', 'water', 'apple', 'more']
+
+WARNING |   SKIP — hello/27171.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — hello/70017.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — hello/68236.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — hello/27180.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — hello/67755.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — hello/27181.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — hello/27182.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — hello/27183.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — hello/27184.mp4 copiado
+INFO |   OK   — hello/27172.mp4 copiado
+INFO |   OK   — hello/27173.mp4 copiado
+WARNING |   SKIP — hello/27175.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — hello/27177.mp4 copiado
+INFO |   OK   — bye/08510.mp4 copiado
+WARNING |   SKIP — bye/08511.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — bye/08512.mp4 copiado
+INFO |   OK   — bye/08514.mp4 copiado
+INFO |   OK   — bye/08515.mp4 copiado
+WARNING |   SKIP — bye/08516.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — bye/08517.mp4 copiado
+WARNING |   SKIP — yes/64275.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — yes/69546.mp4 copiado
+INFO |   OK   — yes/64287.mp4 copiado
+WARNING |   SKIP — yes/68192.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — yes/64290.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — yes/64284.mp4 copiado
+INFO |   OK   — yes/64291.mp4 copiado
+INFO |   OK   — yes/64292.mp4 copiado
+INFO |   OK   — yes/64293.mp4 copiado
+WARNING |   SKIP — yes/64294.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — yes/64295.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — yes/64296.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — yes/66820.mp4 copiado
+WARNING |   SKIP — yes/64297.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — yes/64280.mp4 copiado
+WARNING |   SKIP — yes/64298.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — yes/64299.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — yes/64300.mp4 copiado
+INFO |   OK   — yes/64281.mp4 copiado
+INFO |   OK   — yes/64288.mp4 copiado
+WARNING |   SKIP — yes/64289.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — yes/64283.mp4 copiado
+WARNING |   SKIP — no/38482.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — no/69411.mp4 copiado
+WARNING |   SKIP — no/68110.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — no/68406.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — no/38539.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — no/38540.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — no/38541.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — no/38542.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — no/38525.mp4 copiado
+INFO |   OK   — no/38544.mp4 copiado
+INFO |   OK   — no/38527.mp4 copiado
+INFO |   OK   — no/38529.mp4 copiado
+INFO |   OK   — no/38530.mp4 copiado
+WARNING |   SKIP — no/38531.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — no/38532.mp4 copiado
+INFO |   OK   — no/38533.mp4 copiado
+INFO |   OK   — no/66183.mp4 copiado
+INFO |   OK   — no/38524.mp4 copiado
+WARNING |   SKIP — no/67934.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — no/38534.mp4 copiado
+WARNING |   SKIP — no/38536.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — no/38538.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — please/43213.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — please/69434.mp4 copiado
+WARNING |   SKIP — please/70220.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — please/68670.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — please/43225.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — please/43226.mp4 copiado
+INFO |   OK   — please/43217.mp4 copiado
+WARNING |   SKIP — please/67083.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — please/43218.mp4 copiado
+INFO |   OK   — please/43219.mp4 copiado
+INFO |   OK   — please/43220.mp4 copiado
+WARNING |   SKIP — please/43221.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — please/43222.mp4 copiado
+WARNING |   SKIP — please/43223.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — please/43224.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — thank you/57653.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — thank you/69502.mp4 copiado
+WARNING |   SKIP — thank you/68796.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — thank you/57663.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — thank you/57664.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — thank you/66598.mp4 copiado
+INFO |   OK   — thank you/57655.mp4 copiado
+WARNING |   SKIP — thank you/57665.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — thank you/57666.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — thank you/57667.mp4 copiado
+INFO |   OK   — thank you/57656.mp4 copiado
+INFO |   OK   — thank you/57657.mp4 copiado
+WARNING |   SKIP — thank you/57658.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — thank you/57659.mp4 copiado
+WARNING |   SKIP — help/27194.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — help/69364.mp4 copiado
+WARNING |   SKIP — help/27219.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — help/27220.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — help/27221.mp4 copiado
+INFO |   OK   — help/27206.mp4 copiado
+INFO |   OK   — help/27207.mp4 copiado
+INFO |   OK   — help/27208.mp4 copiado
+INFO |   OK   — help/27209.mp4 copiado
+WARNING |   SKIP — help/27210.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — help/27211.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — help/27212.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — help/65890.mp4 copiado
+INFO |   OK   — help/27213.mp4 copiado
+INFO |   OK   — help/27214.mp4 copiado
+INFO |   OK   — help/65891.mp4 copiado
+INFO |   OK   — help/65889.mp4 copiado
+WARNING |   SKIP — help/67757.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — help/27215.mp4 copiado
+INFO |   OK   — help/27216.mp4 copiado
+INFO |   OK   — help/27217.mp4 copiado
+WARNING |   SKIP — help/27218.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — water/62479.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — water/68179.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — water/70069.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — water/68722.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — water/62504.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — water/62505.mp4 copiado
+INFO |   OK   — water/62506.mp4 copiado
+WARNING |   SKIP — water/62507.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — water/62508.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — water/66752.mp4 copiado
+INFO |   OK   — water/62499.mp4 copiado
+WARNING |   SKIP — water/67044.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — water/62509.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — water/62510.mp4 copiado
+INFO |   OK   — water/62500.mp4 copiado
+INFO |   OK   — water/62501.mp4 copiado
+INFO |   OK   — water/62502.mp4 copiado
+INFO |   OK   — water/62503.mp4 copiado
+WARNING |   SKIP — apple/02997.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — apple/69213.mp4 copiado
+WARNING |   SKIP — apple/68003.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — apple/68576.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — apple/70309.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — apple/03004.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — apple/03005.mp4 copiado
+WARNING |   SKIP — apple/03006.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — apple/03007.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — apple/03008.mp4 copiado
+INFO |   OK   — apple/65085.mp4 copiado
+INFO |   OK   — apple/65086.mp4 copiado
+INFO |   OK   — apple/65084.mp4 copiado
+INFO |   OK   — apple/02999.mp4 copiado
+WARNING |   SKIP — apple/67367.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — apple/03000.mp4 copiado
+INFO |   OK   — apple/03001.mp4 copiado
+INFO |   OK   — apple/03002.mp4 copiado
+INFO |   OK   — apple/03003.mp4 copiado
+WARNING |   SKIP — more/36826.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — more/69401.mp4 copiado
+WARNING |   SKIP — more/70222.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — more/36830.mp4 copiado
+WARNING |   SKIP — more/36832.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — more/36834.mp4 copiado
+WARNING |   SKIP — more/67906.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — more/36836.mp4 copiado
+WARNING |   SKIP — more/36837.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — more/36838.mp4 no encontrado en raw_data/videos/
+WARNING |   SKIP — more/36839.mp4 no encontrado en raw_data/videos/
+INFO |   OK   — more/36840.mp4 copiado
+INFO |   OK   — more/36827.mp4 copiado
+INFO |   OK   — more/36828.mp4 copiado
+INFO |   OK   — more/36829.mp4 copiado
+INFO | 
+============================================================
+INFO | RESUMEN DE FILTRADO
+INFO | ============================================================
+INFO | Palabra       En JSON   Copiados   Faltantes
+INFO | ---------------------------------------------
+INFO | hello              13          4           9
+INFO | bye                 7          5           2
+INFO | yes                22         12          10
+INFO | no                 22         11          11
+INFO | please             15          7           8
+INFO | thank you          14          7           7
+INFO | help               22         14           8
+INFO | water              18          9           9
+INFO | apple              19         11           8
+INFO | more               15          8           7
+INFO | ---------------------------------------------
+INFO | TOTAL                         88          79
+INFO | ============================================================
+WARNING | 
+79 videos no encontrados — descarga raw_data/videos/ primero.
+Usa el script oficial: ia-entrenamiento/start_kit/video_downloader.py

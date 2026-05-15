@@ -1,0 +1,8 @@
+FEATURES_DIR = "data/features"
+TEST_SIZE = 0.20
+RANDOM_SEED = 42
+
+MODEL_SAVE_PATH = "artifacts/modelo_dualsign.keras"
+LEARNING_RATE = 0.001
+MAX_EPOCHS = 100
+EARLY_STOPPING_PATIENCE = 15

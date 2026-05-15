@@ -1,0 +1,32 @@
+# DualSign — ML Pipeline Dependencies
+# Python 3.10 | Tested on macOS Apple Silicon (M-series)
+#
+# Install:
+#   python3.10 -m venv venv
+#   source venv/bin/activate
+#   pip install -r requirements.txt
+#
+# macOS Apple Silicon only — GPU acceleration (optional, skip on other platforms):
+#   pip install tensorflow-metal==1.2.0
+
+# Core ML
+tensorflow==2.19.0
+numpy==2.0.2
+scikit-learn==1.7.2
+
+# Landmark extraction
+# On Apple Silicon you may install the optimised build instead:
+#   pip install mediapipe-silicon==0.9.2.1
+mediapipe==0.9.2.1
+
+# Video processing
+opencv-python==4.13.0.92
+
+# Model export to TF.js (must match web-frontend's @tensorflow/tfjs version)
+tensorflowjs==4.22.0
+
+# Dashboard & reporting
+streamlit==1.57.0
+matplotlib==3.10.8
+seaborn==0.13.2
+plotly==6.7.0
